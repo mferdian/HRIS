@@ -1,0 +1,47 @@
+
+services:
+  db:
+    image: postgres:15
+    container_name: insighthr-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo_dev_password
+      POSTGRES_DB: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  odoo:
+    image: odoo:17.0
+    container_name: insighthr-odoo
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo_dev_password
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-data:/var/lib/odoo
+      - ./odoo/addons:/mnt/extra-addons 
+    command: ["odoo", "--dev=all"]
+
+#   analytics-service:
+#     build: ./analytics-service
+#     container_name: insighthr-analytics
+#     restart: unless-stopped
+#     env_file:
+#       - .env
+#     ports:
+#       - "8000:8000"
+#       
+#     volumes:
+#       - ./analytics-service/app:/app/app
+
+volumes:
+  db-data:
+  odoo-data:

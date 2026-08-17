@@ -1,0 +1,54 @@
+# Environment variables (Sangat penting agar password & API key tidak bocor ke Git)
+.env
+*.env
+.env.local
+.env.development
+.env.production
+
+# Python / Analytics Service
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment (Jika menggunakan virtual env untuk python)
+venv/
+.venv/
+env/
+ENV/
+
+# Odoo Specific
+*.filestore
+*.sessions
+*.zip
+*.tar.gz
+*.dump
+*.sql
+
+# OS / System Files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
