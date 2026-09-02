@@ -55,18 +55,17 @@ odoo/addons/insighthr
 
 ```text
 .
-├── docker-compose.yml
-├── docs
-│   ├── gap-analysis.md
-│   └── odoo-field-mapping.md
-└── odoo
-    └── addons
-        └── insighthr
-            ├── __init__.py
-            ├── __manifest__.py
-            ├── models
-            ├── security
-            └── views
+|-- docker-compose.yml
+|-- docs
+|   |-- gap-analysis.md
+|   `-- odoo-field-mapping.md
+`-- odoo
+    `-- addons
+        `-- insighthr
+            |-- __init__.py
+            |-- __manifest__.py
+            |-- models
+            `-- views
 ```
 
 ## Current Development Status
